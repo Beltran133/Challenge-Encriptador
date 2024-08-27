@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --color--primario: #F3F5FC;
+    --color--secundario: #0A3871;
+    --color--terciario: #FFFFFF;
+
+    --fuente--inter: 'Inter', sans-serif;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:var(--fuente--inter);
+}
+
+body {
+    background-color: var(--color--primario);
+    color: var(--color--secundario);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; 
+}
+
+.contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 2em 2.5em;
+}
+
+.contenido--entrada,
+.contenido--salida {
+    min-width: 25em;
+    max-width: 800px;
+    padding: 0 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.contenido--entrada {
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.contenido--salida {
+    flex: 0 0 auto;
+    background-color: var(--color--terciario);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contenido--entrada--caja {
+    flex: 1;
+    margin: 1.5em 0;
+}
+.contenido--entrada--terminos {
+    padding-bottom: 1em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.2em;
+}
+
+.contenido--entrada--caja--texto {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 1em;
+    border: none;
+    color: var(--color--secundario);
+    text-shadow: 2px 2px 4px var(--color--secundario) ;
+  
+}
+
+.contenido--entrada--botones {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contenido--salida {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color--terciario);
+    border-radius: 10px;
+    margin: 1em 3em;
+}
+
+.contenido--salida--inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.contenido--salida--imagen {
+    max-width: 80%;
+    max-height: 50%;
+    margin-bottom: 20px;
+}
+
+.contenido--salida--inicio--texto {
+    font-size: 1.2rem;
+    color: var(--color--secundario);
+    padding: 0 1em;
+}
+
+.contenido--salida--resultado,
+.contenido--salida--copiar   {
+    display: none;
+    width: 100%;
+    resize: none;
+    outline: none;
+    border: none;
+    color: var(--color--secundario);
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 1.5em 0.5em;
+}
+
+.contenido--salida--resultado{
+    height: 90%;
+}
+
+.contenido--entrada--botones--encriptar,
+.contenido--entrada--botones--desencriptar,
+.contenido--salida--copiar {
+    flex: 1;
+    padding: 15px;
+    border-radius: 1.2em;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    margin-right: 2em;
+}
+.contenido--entrada--botones--encriptar {
+    background-color: var(--color--secundario);
+    color: var(--color--terciario);
+}
+
+.contenido--entrada--botones--desencriptar {
+    color: var(--color--secundario);
+    border: 2px solid var(--color--secundario);
+}
+
+footer {
+    padding: 1em;
+}
+
+
+@media (min-width: 768px) {
+    .contenido {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .contenido--entrada,
+    .contenido--salida {
+        height: 100%;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .contenido {
+        flex-direction: column;
+        width: 100%;
+        padding: 0; 
+    }
+
+    .contenido--entrada,
+    .contenido--salida {
+        width: 100%;
+        min-height: 15em;
+        max-height: 30em;
+    }
+
+    .contenido--salida--resultado {
+        height: 100%;
+    }
+
+    .contenido--entrada--botones--encriptar,
+    .contenido--entrada--botones--desencriptar {
+        margin: 0.5em 0;
+    }
+
+    .contenido--entrada--botones {
+        flex-direction: column;
+    }
+
+    .contenido--salida--inicio--imagen {
+        display: none;
+    }
+}
